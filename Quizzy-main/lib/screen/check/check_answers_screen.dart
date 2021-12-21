@@ -36,7 +36,7 @@ class CheckAnswersScreen extends StatelessWidget {
       );
     }
     Question question = questions[index];
-    bool correct = question.answer == answers[index];
+    bool correct = question.dapAnDung == answers[index];
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -44,7 +44,7 @@ class CheckAnswersScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              HtmlUnescape().convert(question.question),
+              HtmlUnescape().convert(question.dapAnDung),
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
@@ -65,7 +65,7 @@ class CheckAnswersScreen extends StatelessWidget {
                     TextSpan(children: [
                       TextSpan(text: "Answer: "),
                       TextSpan(
-                          text: HtmlUnescape().convert(question.answer),
+                          text: HtmlUnescape().convert(question.dapAnDung),
                           style: TextStyle(fontWeight: FontWeight.w500))
                     ]),
                     style: TextStyle(fontSize: 16.0),

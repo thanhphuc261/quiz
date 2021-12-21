@@ -28,12 +28,12 @@ class _QuizScreenState extends State<QuizScreen> {
             Row(
               children: [
                 CircleAvatar(
-                  backgroundColor: Colors.deepPurple,
+                  backgroundColor: Colors.blue,
                   child: Text("${_currentIndex + 1}"),
                 ),
                 SizedBox(width: 16.0),
                 Expanded(
-                  child: Text(question.question),
+                  child: Text(question.noiDung),
                 )
               ],
             ),
@@ -42,7 +42,7 @@ class _QuizScreenState extends State<QuizScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  ...question.options.map(
+                  ...question.dapAn.map(
                     (option) => RadioListTile(
                       title: Text(option),
                       value: option,
@@ -62,8 +62,13 @@ class _QuizScreenState extends State<QuizScreen> {
                 alignment: Alignment.bottomCenter,
                 child: ElevatedButton.icon(
                   onPressed: _handleNext,
-                  label: Text('Next'),
-                  icon: Icon(Icons.arrow_forward),
+                  label: Text(
+                    'Next',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  icon: Icon(
+                    Icons.arrow_forward,
+                  ),
                 ),
               ),
             )

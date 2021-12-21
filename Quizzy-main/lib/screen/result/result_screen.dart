@@ -14,7 +14,7 @@ class QuizResultScreen extends StatelessWidget {
     final List<Question> questions = questionsData;
 
     this.answers.forEach((index, value) {
-      if (questions[index].answer == value) correct++;
+      if (questions[index].dapAnDung == value) correct++;
     });
 
     final TextStyle titleStyle = TextStyle(
@@ -27,7 +27,10 @@ class QuizResultScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Result"),
+        title: Text(
+          "Result",
+          style: TextStyle(color: Colors.white),
+        ),
         elevation: 0,
       ),
       body: Container(
@@ -95,12 +98,18 @@ class QuizResultScreen extends StatelessWidget {
                 children: <Widget>[
                   ElevatedButton.icon(
                     icon: Icon(Icons.home),
-                    label: Text('Goto Home'),
+                    label: Text(
+                      'Goto Home',
+                      style: TextStyle(color: Colors.white),
+                    ),
                     onPressed: () => Navigator.pop(context),
                   ),
                   ElevatedButton.icon(
                     icon: Icon(Icons.check_circle_rounded),
-                    label: Text('Check Answers'),
+                    label: Text(
+                      'Check Answers',
+                      style: TextStyle(color: Colors.white),
+                    ),
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (_) => CheckAnswersScreen(answers)));
